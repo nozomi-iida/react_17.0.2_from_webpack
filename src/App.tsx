@@ -1,12 +1,15 @@
-import "./style.module.scss";
-import { plus } from "test/math";
+import "assets/global.scss";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { routes } from "constants/routes";
+import SignInPage from "pages/SignInPage";
 
 function App() {
   return (
-    <div>
-      <h2>Welcome to Hello App</h2>
-      <h3>Date : {new Date().toDateString()}</h3>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path={routes.signIn()} element={<SignInPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
