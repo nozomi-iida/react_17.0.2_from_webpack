@@ -4,7 +4,7 @@ import DefaultImg from "assets/images/DefaultImage.png";
 const HomePage: VFC = () => {
   return (
     <div>
-      <h1>hogehoge!</h1>
+      <h1>FugaFuga!</h1>
       <img src={DefaultImg} alt="test" />
     </div>
   );
