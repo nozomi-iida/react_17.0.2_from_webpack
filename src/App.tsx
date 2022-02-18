@@ -1,4 +1,4 @@
-import "assets/global.scss";
+import "assets/styles/global.scss";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { routes } from "constants/routes";
 import SignInPage from "pages/SignInPage";

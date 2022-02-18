@@ -1,9 +1,11 @@
-import {FC, useState} from "react";
+import { FC } from "react";
+import DefaultImg from "assets/images/DefaultImage.png";
 
 const HomePage: FC = () => {
   return (
     <div>
-      <h1>HomePage</h1>
+      <h1>hoge</h1>
+      <img src={DefaultImg} alt="test" />
     </div>
   );
 };
