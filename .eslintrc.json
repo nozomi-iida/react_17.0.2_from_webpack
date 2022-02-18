@@ -3,9 +3,16 @@
         "browser": true,
         "es2021": true
     },
+    "settings": {
+        "react": {
+            "version": "detect"
+        }
+    },
     "extends": [
+        "standard",
         "plugin:react/recommended",
-        "standard"
+        "plugin:react/jsx-runtime",
+        "prettier"
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
@@ -20,5 +27,6 @@
         "@typescript-eslint"
     ],
     "rules": {
+        "no-unused-vars": "warn"
     }
 }
