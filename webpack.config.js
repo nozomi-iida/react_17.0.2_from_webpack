@@ -1,5 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const ESLintPlugin = require('eslint-webpack-plugin');
 
 module.exports = {
   devtool: "inline-source-map",
@@ -35,5 +36,9 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "public", "index.html"),
     }),
+    new ESLintPlugin({
+      extensions: [ '.ts', '.tsx' ],
+      exclude: 'node_modules'
+    })
   ],
 };

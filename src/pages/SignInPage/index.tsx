@@ -1,6 +1,6 @@
-import { VFC } from "react";
+import {FC, VFC} from "react";
 
-const SignInPage: VFC = () => {
+const SignInPage: FC = () => {
   return (
     <div>
       <input />

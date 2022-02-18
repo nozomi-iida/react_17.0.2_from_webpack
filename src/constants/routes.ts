@@ -1,4 +1,4 @@
 export const routes = {
   top: () => "/",
-  signIn: () => "/sign_in",
-};
+  signIn: () => "/sign_in"
+}
