@@ -1,10 +1,10 @@
-import { FC } from "react";
+import { VFC } from "react";
 import DefaultImg from "assets/images/DefaultImage.png";
 
-const HomePage: FC = () => {
+const HomePage: VFC = () => {
   return (
     <div>
-      <h1>ddd!</h1>
+      <h1>hogehoge!</h1>
       <img src={DefaultImg} alt="test" />
     </div>
   );

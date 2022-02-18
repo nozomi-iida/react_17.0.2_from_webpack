@@ -10,6 +10,12 @@ module.exports = merge(common, {
     port: 3000,
     open: true,
     historyApiFallback: true,
+    client: {
+      overlay: {
+        warnings: false,
+        errors: true,
+      },
+    },
   },
   plugins: [
     new ESLintPlugin({
