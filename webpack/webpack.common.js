@@ -13,6 +13,7 @@ module.exports = (env) => {
       path: path.join(__dirname, "../build"),
       filename: "bundle.js",
       assetModuleFilename: "media/[hash][ext][query]",
+      publicPath: "/",
     },
     module: {
       rules: [
@@ -40,14 +41,34 @@ module.exports = (env) => {
           use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
         },
         {
-          test: /\.(png|jpg|gif)$/,
+          test: /\.less$/i,
+          exclude: /node_modules/,
+          use: [
+            "style-loader",
+            "css-loader",
+            {
+              loader: "less-loader",
+              options: {
+                lessOptions: {
+                  javascriptEnabled: true,
+                },
+              },
+            },
+          ],
+        },
+        {
+          test: /\.(png|jpg|gif|svg)$/,
           type: "asset",
         },
       ],
     },
     resolve: {
       extensions: [".tsx", ".ts", ".js", ".jsx"],
-      modules: [path.resolve("./src"), path.resolve("./node_modules")],
+      modules: [
+        path.resolve("./src"),
+        path.resolve("../node_modules"),
+        path.resolve("./node_modules"),
+      ],
     },
     optimization: {
       minimizer: ["...", new CssMinimizerPlugin()],
