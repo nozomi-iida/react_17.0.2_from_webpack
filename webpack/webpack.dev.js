@@ -2,8 +2,8 @@ const { merge } = require("webpack-merge");
 const common = require("./webpack.common.js");
 const ESLintPlugin = require("eslint-webpack-plugin");
 
-module.exports = (env) => {
-  return merge(common(env), {
+module.exports = () => {
+  return merge(common(), {
     mode: "development",
     devtool: "inline-source-map",
     devServer: {

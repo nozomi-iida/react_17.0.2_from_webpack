@@ -5,8 +5,8 @@ const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const RemoveEmptyScriptsPlugin = require("webpack-remove-empty-scripts");
 const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
 
-module.exports = (env) => {
-  const isDevelopment = env.development;
+module.exports = () => {
+  const isDevelopment = process.env.NODE_ENV === "development";
   return {
     output: {
       path: path.join(__dirname, "../build"),
@@ -52,7 +52,6 @@ module.exports = (env) => {
       minimizer: ["...", new CssMinimizerPlugin()],
     },
     plugins: [
-      isDevelopment && new ReactRefreshWebpackPlugin(),
       new HtmlWebpackPlugin({
         template: "./public/index.html",
       }),
@@ -60,6 +59,7 @@ module.exports = (env) => {
         filename: "css/main.css",
       }),
       new RemoveEmptyScriptsPlugin(),
+      isDevelopment && new ReactRefreshWebpackPlugin(),
     ].filter(Boolean),
   };
 };
