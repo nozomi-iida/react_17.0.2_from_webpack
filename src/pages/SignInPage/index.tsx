@@ -5,7 +5,7 @@ const SignInPage: FC = () => {
     <div>
       <input />
       <input />
-      <button>ログイン</button>
+      <button>Sign in</button>
     </div>
   );
 };

@@ -4,8 +4,9 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const RemoveEmptyScriptsPlugin = require("webpack-remove-empty-scripts");
 const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
+const Dotenv = require("dotenv-webpack");
 
-module.exports = () => {
+module.exports = (env) => {
   const isDevelopment = process.env.NODE_ENV === "development";
   return {
     output: {
@@ -59,6 +60,7 @@ module.exports = () => {
         filename: "css/main.css",
       }),
       new RemoveEmptyScriptsPlugin(),
+      new Dotenv({ path: env.file }),
       isDevelopment && new ReactRefreshWebpackPlugin(),
     ].filter(Boolean),
   };
